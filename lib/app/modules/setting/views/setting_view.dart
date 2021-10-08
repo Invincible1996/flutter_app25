@@ -54,6 +54,40 @@ class SettingView extends GetView<SettingController> {
                 ],
               ),
             ),
+            GestureDetector(
+              onTap: () {
+                Get.defaultDialog(
+                  title: '新版本',
+                  radius: 6,
+                  middleText: '1、修复已知问题\n 2、新增分享功能',
+                );
+              },
+              child: Container(
+                height: 50,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1,
+                      color: Color(0XFFEEEEEE),
+                    ),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Text(
+                      '检查更新',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    Text('v1.0.1')
+                  ],
+                ),
+              ),
+            ),
             const Spacer(
               flex: 1,
             ),

@@ -13,6 +13,7 @@ dependencies:
   logger: ^1.1.0
   getwidget: ^2.0.4
   flutter_slidable: ^0.6.0
+  upgrader: ^3.6.0
 
 
 dev_dependencies:

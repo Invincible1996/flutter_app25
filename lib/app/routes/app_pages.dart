@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_app25/app/modules/adress_detail/bindings/adress_detail_binding.dart';
+import 'package:flutter_app25/app/modules/adress_detail/views/adress_detail_view.dart';
 import 'package:flutter_app25/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_app25/app/modules/home/views/home_view.dart';
 import 'package:flutter_app25/app/modules/main/bindings/main_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.MY_ADDRESS,
       page: () => MyAddressView(),
       binding: MyAddressBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADRESS_DETAIL,
+      page: () => AdressDetailView(),
+      binding: AdressDetailBinding(),
     ),
   ];
 }
