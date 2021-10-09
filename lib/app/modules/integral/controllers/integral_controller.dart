@@ -1,20 +1,19 @@
+import 'package:flutter_app25/app/widget/base_view.dart';
 import 'package:get/get.dart';
 
 class IntegralController extends GetxController {
-  //TODO: Implement IntegralController
+  var pageState = PageState.busy.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      pageState.value = PageState.idle;
+    }).catchError((err) {
+      pageState.value = PageState.error;
+    });
   }
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }
