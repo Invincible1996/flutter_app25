@@ -4,6 +4,8 @@ import 'package:flutter_app25/app/modules/adress_detail/bindings/adress_detail_b
 import 'package:flutter_app25/app/modules/adress_detail/views/adress_detail_view.dart';
 import 'package:flutter_app25/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_app25/app/modules/home/views/home_view.dart';
+import 'package:flutter_app25/app/modules/integral/bindings/integral_binding.dart';
+import 'package:flutter_app25/app/modules/integral/views/integral_view.dart';
 import 'package:flutter_app25/app/modules/main/bindings/main_binding.dart';
 import 'package:flutter_app25/app/modules/main/views/main_view.dart';
 import 'package:flutter_app25/app/modules/message/bindings/message_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.ADRESS_DETAIL,
       page: () => AdressDetailView(),
       binding: AdressDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.INTEGRAL,
+      page: () => IntegralView(),
+      binding: IntegralBinding(),
     ),
   ];
 }

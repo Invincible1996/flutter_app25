@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app25/app/routes/app_pages.dart';
 import 'package:flutter_app25/app/style/custom_style.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-
 import 'package:get/get.dart';
+import 'package:getwidget/getwidget.dart';
 
 import '../controllers/my_address_controller.dart';
 
@@ -13,9 +13,9 @@ class MyAddressView extends GetView<MyAddressController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('MyAddressView'),
-        centerTitle: true,
+      appBar: GFAppBar(
+        searchBar: true,
+        title: const Text('MyAddress'),
       ),
       body: Obx(
         () => ListView.builder(

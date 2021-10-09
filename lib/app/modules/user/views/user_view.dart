@@ -11,8 +11,7 @@ class UserView extends StatefulWidget {
   _UserViewState createState() => _UserViewState();
 }
 
-class _UserViewState extends State<UserView>
-    with AutomaticKeepAliveClientMixin {
+class _UserViewState extends State<UserView> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -47,8 +46,7 @@ class _UserViewState extends State<UserView>
                     //头像半径
                     radius: 35,
                     //头像图片 -> NetworkImage网络图片，AssetImage项目资源包图片, FileImage本地存储图片
-                    backgroundImage: NetworkImage(
-                        'https://pic2.zhimg.com/v2-639b49f2f6578eabddc458b84eb3c6a1.jpg'),
+                    backgroundImage: NetworkImage('https://pic2.zhimg.com/v2-639b49f2f6578eabddc458b84eb3c6a1.jpg'),
                   ),
                   const SizedBox(
                     width: 15,
@@ -169,7 +167,9 @@ class _UserViewState extends State<UserView>
                   UserListItem(
                     iconData: Icons.score,
                     title: '我的积分',
-                    onTapItem: () {},
+                    onTapItem: () {
+                      Get.toNamed(Routes.INTEGRAL);
+                    },
                   ),
                   UserListItem(
                     title: '我的地址',

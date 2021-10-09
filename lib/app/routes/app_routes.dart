@@ -11,6 +11,7 @@ abstract class Routes {
   static const SETTING = _Paths.SETTING;
   static const MY_ADDRESS = _Paths.MY_ADDRESS;
   static const ADRESS_DETAIL = _Paths.ADRESS_DETAIL;
+  static const INTEGRAL = _Paths.INTEGRAL;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const SETTING = '/setting';
   static const MY_ADDRESS = '/my-address';
   static const ADRESS_DETAIL = '/adress-detail';
+  static const INTEGRAL = '/integral';
 }
