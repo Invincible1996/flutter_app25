@@ -33,12 +33,13 @@ class _HomeViewState extends State<HomeView> {
           ),
           onPressed: () {},
           type: GFButtonType.transparent,
+          shape: GFIconButtonShape.standard,
         ),
-        title: const Text("GF Appbar"),
+        title: const Text("Home Page"),
         actions: <Widget>[
           GFIconButton(
             icon: const Icon(
-              Icons.favorite,
+              Icons.share,
               color: Colors.white,
             ),
             onPressed: () {},

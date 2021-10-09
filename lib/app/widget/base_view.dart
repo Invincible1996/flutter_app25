@@ -28,14 +28,23 @@ class BaseView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IndexedStack(
-      index: pageState.index,
-      children: [
-        const Center(child: CircularProgressIndicator()),
-        child,
-        const Text('暂无数据!'),
-        const Text('error!'),
-      ],
-    );
+    return _buildContent(context);
+  }
+
+  Widget _buildContent(BuildContext context) {
+    switch (pageState) {
+      case PageState.idle:
+        return child;
+      case PageState.busy:
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      case PageState.error:
+        return const Text('error!');
+      case PageState.empty:
+        return const Text('empty!');
+      default:
+        return child;
+    }
   }
 }
