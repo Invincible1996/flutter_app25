@@ -12,15 +12,16 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
   PageController controller = PageController();
-  List<Widget> pageList = [
-    const HomeView(),
-    const MessageView(),
-    const UserView(),
-  ];
+  List<Widget> pageList = [];
 
   @override
   void initState() {
     super.initState();
+    pageList = [
+      const HomeView(),
+      const MessageView(),
+      const UserView(),
+    ];
   }
 
   @override

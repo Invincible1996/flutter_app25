@@ -14,6 +14,7 @@ dependencies:
   getwidget: ^2.0.4
   flutter_slidable: ^0.6.0
   upgrader: ^3.6.0
+  fl_chart: ^0.40.0
 
 
 dev_dependencies:

@@ -19,11 +19,12 @@ class HomeView extends StatefulWidget {
   _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends State<HomeView> with AutomaticKeepAliveClientMixin {
   HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
+    print('HomeView build');
     return Scaffold(
       appBar: GFAppBar(
         leading: GFIconButton(
@@ -142,4 +143,7 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
