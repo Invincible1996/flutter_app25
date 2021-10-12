@@ -13,6 +13,7 @@ class HomeController extends GetxController {
     pageState.value = PageState.busy;
     MatchProvider().getMatches().then((res) {
       list.assignAll(res);
+
       pageState.value = PageState.idle;
     }).catchError((err) {
       pageState.value = PageState.error;

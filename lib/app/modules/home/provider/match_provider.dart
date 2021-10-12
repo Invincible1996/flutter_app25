@@ -34,7 +34,6 @@ class MatchProvider extends GetConnect {
 
     logger.v(matchModel.toJson());
     logger.v(matchModel.matchs?.first.dataList?.first.team2);
-    // print(matchModel.matchs?.first.toJson());
 
     return matchModel.matchs ?? [];
   }

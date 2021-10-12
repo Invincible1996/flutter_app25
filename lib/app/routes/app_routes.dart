@@ -12,6 +12,7 @@ abstract class Routes {
   static const MY_ADDRESS = _Paths.MY_ADDRESS;
   static const ADRESS_DETAIL = _Paths.ADRESS_DETAIL;
   static const INTEGRAL = _Paths.INTEGRAL;
+  static const ORDER = _Paths.ORDER;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const MY_ADDRESS = '/my-address';
   static const ADRESS_DETAIL = '/adress-detail';
   static const INTEGRAL = '/integral';
+  static const ORDER = '/order';
 }

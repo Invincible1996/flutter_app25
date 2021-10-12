@@ -12,6 +12,8 @@ import 'package:flutter_app25/app/modules/message/bindings/message_binding.dart'
 import 'package:flutter_app25/app/modules/message/views/message_view.dart';
 import 'package:flutter_app25/app/modules/my_address/bindings/my_address_binding.dart';
 import 'package:flutter_app25/app/modules/my_address/views/my_address_view.dart';
+import 'package:flutter_app25/app/modules/order/bindings/order_binding.dart';
+import 'package:flutter_app25/app/modules/order/views/order_view.dart';
 import 'package:flutter_app25/app/modules/setting/bindings/setting_binding.dart';
 import 'package:flutter_app25/app/modules/setting/views/setting_view.dart';
 import 'package:flutter_app25/app/modules/user/bindings/user_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.INTEGRAL,
       page: () => IntegralView(),
       binding: IntegralBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => OrderView(),
+      binding: OrderBinding(),
     ),
   ];
 }

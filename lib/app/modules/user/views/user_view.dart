@@ -11,7 +11,8 @@ class UserView extends StatefulWidget {
   _UserViewState createState() => _UserViewState();
 }
 
-class _UserViewState extends State<UserView> with AutomaticKeepAliveClientMixin {
+class _UserViewState extends State<UserView>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -46,7 +47,8 @@ class _UserViewState extends State<UserView> with AutomaticKeepAliveClientMixin 
                     //头像半径
                     radius: 35,
                     //头像图片 -> NetworkImage网络图片，AssetImage项目资源包图片, FileImage本地存储图片
-                    backgroundImage: NetworkImage('https://pic2.zhimg.com/v2-639b49f2f6578eabddc458b84eb3c6a1.jpg'),
+                    backgroundImage: NetworkImage(
+                        'https://pic2.zhimg.com/v2-639b49f2f6578eabddc458b84eb3c6a1.jpg'),
                   ),
                   const SizedBox(
                     width: 15,
@@ -138,17 +140,22 @@ class _UserViewState extends State<UserView> with AutomaticKeepAliveClientMixin 
                       Text('我的消息'),
                     ],
                   ),
-                  Column(
-                    children: const [
-                      Icon(
-                        Icons.list,
-                        color: CustomStyle.primaryColor,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text('我的订单'),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(Routes.ORDER);
+                    },
+                    child: Column(
+                      children: const [
+                        Icon(
+                          Icons.list,
+                          color: CustomStyle.primaryColor,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('我的订单'),
+                      ],
+                    ),
                   ),
                 ],
               ),
