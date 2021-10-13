@@ -21,36 +21,80 @@ class _MessageViewState extends State<MessageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Message'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Message'),
+      // ),
       body: Container(
         alignment: Alignment.center,
-        child: Column(
+        child: Stack(
           children: [
-            GFCarousel(
-              autoPlay: true,
-              pagination: true,
-              activeIndicator: Colors.white,
-              items: imageList.map(
-                (url) {
-                  return Container(
-                    margin: const EdgeInsets.only(left: 8, right: 8, top: 10),
-                    child: ClipRRect(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(5.0)),
-                      child:
-                          Image.network(url, fit: BoxFit.cover, width: 1000.0),
-                    ),
-                  );
-                },
-              ).toList(),
-              onPageChanged: (index) {
-                setState(() {
-                  index;
-                });
-              },
+            Column(
+              children: [
+                GFCarousel(
+                  autoPlay: true,
+                  pagerSize: 10,
+                  activeIndicator: Colors.white,
+                  pagination: true,
+                  viewportFraction: 1.0,
+                  items: imageList.map(
+                    (url) {
+                      return Image.network(url, fit: BoxFit.cover, width: 2000.0);
+                    },
+                  ).toList(),
+                  onPageChanged: (index) {
+                    setState(() {
+                      index;
+                    });
+                  },
+                ),
+              ],
             ),
+            SafeArea(
+              child: Positioned(
+                  child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 35,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.only(left: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.search,
+                            size: 18,
+                          ),
+                          Expanded(
+                            child: Text('请输入要查询的内容'),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Icon(
+                    Icons.email,
+                    size: 18,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  const Icon(
+                    Icons.notifications,
+                    size: 18,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                ],
+              )),
+            )
           ],
         ),
       ),
