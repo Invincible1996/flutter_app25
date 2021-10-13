@@ -19,6 +19,8 @@ void main() {
       defaultTransition: Transition.cupertino,
       theme: ThemeData(
         primarySwatch: CustomStyle.primaryColor,
+        highlightColor: const Color.fromRGBO(0, 0, 0, 0),
+        splashColor: const Color.fromRGBO(0, 0, 0, 0),
       ),
     ),
   );

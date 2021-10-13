@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app25/app/modules/home/views/home_view.dart';
 import 'package:flutter_app25/app/modules/message/views/message_view.dart';
+import 'package:flutter_app25/app/modules/shopping_cart/views/shopping_cart_view.dart';
 import 'package:flutter_app25/app/modules/user/views/user_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
+
   @override
   _MainViewState createState() => _MainViewState();
 }
@@ -20,6 +22,7 @@ class _MainViewState extends State<MainView> {
     pageList = [
       const HomeView(),
       const MessageView(),
+      const ShoppingCartView(),
       const UserView(),
     ];
   }
@@ -38,6 +41,7 @@ class _MainViewState extends State<MainView> {
         physics: const NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: (int index) {
           _currentIndex = index;
@@ -52,6 +56,10 @@ class _MainViewState extends State<MainView> {
           BottomNavigationBarItem(
             label: 'Message',
             icon: Icon(Icons.email),
+          ),
+          BottomNavigationBarItem(
+            label: 'ShoppingCart',
+            icon: Icon(Icons.shopping_cart),
           ),
           BottomNavigationBarItem(
             label: 'User',

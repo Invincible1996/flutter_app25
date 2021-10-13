@@ -1,18 +1,49 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 
-import '../controllers/adress_detail_controller.dart';
+import '../controllers/address_detail_controller.dart';
 
-class AdressDetailView extends GetView<AdressDetailController> {
+class AddressDetailView extends GetView<AddressDetailController> {
+  const AddressDetailView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0XFFF6F6F3),
       appBar: AppBar(
-        title: const Text('AdressDetailView'),
+        title: const Text('编辑地址'),
         centerTitle: true,
+        actions: [
+          TextButton(
+            onPressed: () {
+              Get.defaultDialog(
+                radius: 6,
+                title: '删除地址',
+                middleText: '确认删除地址',
+                titlePadding: const EdgeInsets.all(10),
+                onCancel: () {},
+                onConfirm: () {},
+                cancel: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('确认'),
+                ),
+                confirm: ElevatedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text('取消'),
+                ),
+              );
+            },
+            child: const Text(
+              '删除',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
       body: Column(
         children: [

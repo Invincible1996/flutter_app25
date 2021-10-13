@@ -1,7 +1,5 @@
-import 'package:get/get.dart';
-
-import 'package:flutter_app25/app/modules/adress_detail/bindings/adress_detail_binding.dart';
-import 'package:flutter_app25/app/modules/adress_detail/views/adress_detail_view.dart';
+import 'package:flutter_app25/app/modules/adress_detail/bindings/address_detail_binding.dart';
+import 'package:flutter_app25/app/modules/adress_detail/views/address_detail_view.dart';
 import 'package:flutter_app25/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_app25/app/modules/home/views/home_view.dart';
 import 'package:flutter_app25/app/modules/integral/bindings/integral_binding.dart';
@@ -16,8 +14,11 @@ import 'package:flutter_app25/app/modules/order/bindings/order_binding.dart';
 import 'package:flutter_app25/app/modules/order/views/order_view.dart';
 import 'package:flutter_app25/app/modules/setting/bindings/setting_binding.dart';
 import 'package:flutter_app25/app/modules/setting/views/setting_view.dart';
+import 'package:flutter_app25/app/modules/shopping_cart/bindings/shopping_cart_binding.dart';
+import 'package:flutter_app25/app/modules/shopping_cart/views/shopping_cart_view.dart';
 import 'package:flutter_app25/app/modules/user/bindings/user_binding.dart';
 import 'package:flutter_app25/app/modules/user/views/user_view.dart';
+import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -29,12 +30,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.USER,
-      page: () => UserView(),
+      page: () => const UserView(),
       binding: UserBinding(),
     ),
     GetPage(
@@ -54,23 +55,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MY_ADDRESS,
-      page: () => MyAddressView(),
+      page: () => const MyAddressView(),
       binding: MyAddressBinding(),
     ),
     GetPage(
       name: _Paths.ADRESS_DETAIL,
-      page: () => AdressDetailView(),
-      binding: AdressDetailBinding(),
+      page: () => const AddressDetailView(),
+      binding: AddressDetailBinding(),
     ),
     GetPage(
       name: _Paths.INTEGRAL,
-      page: () => IntegralView(),
+      page: () => const IntegralView(),
       binding: IntegralBinding(),
     ),
     GetPage(
       name: _Paths.ORDER,
-      page: () => OrderView(),
+      page: () => const OrderView(),
       binding: OrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOPPING_CART,
+      page: () => ShoppingCartView(),
+      binding: ShoppingCartBinding(),
     ),
   ];
 }

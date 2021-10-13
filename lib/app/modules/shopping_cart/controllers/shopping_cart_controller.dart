@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 
-class OrderController extends GetxController {
-  //TODO: Implement OrderController
+class ShoppingCartController extends GetxController {
+  //TODO: Implement ShoppingCartController
 
   final count = 0.obs;
-
   @override
   void onInit() {
     super.onInit();
@@ -15,10 +14,7 @@ class OrderController extends GetxController {
     super.onReady();
   }
 
-  setPrice() {}
-
   @override
   void onClose() {}
-
   void increment() => count.value++;
 }

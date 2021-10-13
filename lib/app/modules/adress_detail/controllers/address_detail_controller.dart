@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
 
-class AdressDetailController extends GetxController {
-  //TODO: Implement AdressDetailController
-
+class AddressDetailController extends GetxController {
   final count = 0.obs;
   @override
   void onInit() {
