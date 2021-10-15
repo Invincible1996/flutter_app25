@@ -49,14 +49,14 @@ class _MessageViewState extends State<MessageView> {
                 ),
               ],
             ),
-            SafeArea(
-              child: Positioned(
-                  child: Row(
+            Positioned(
+                child: SafeArea(
+              child: Row(
                 children: [
                   Expanded(
                     child: Container(
                       height: 35,
-                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       padding: const EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -90,11 +90,11 @@ class _MessageViewState extends State<MessageView> {
                     color: Colors.white,
                   ),
                   const SizedBox(
-                    width: 5,
+                    width: 15,
                   ),
                 ],
-              )),
-            )
+              ),
+            ))
           ],
         ),
       ),

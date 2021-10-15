@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app25/app/modules/home/views/home_view.dart';
 import 'package:flutter_app25/app/modules/message/views/message_view.dart';
@@ -34,11 +37,20 @@ class _MainViewState extends State<MainView> {
       //   title: const Text('MainView'),
       //   centerTitle: false,
       // ),
-      body: PageView.builder(
-        controller: controller,
-        itemBuilder: (_, index) => pageList[index],
-        itemCount: pageList.length,
-        physics: const NeverScrollableScrollPhysics(),
+      body: Column(
+        children: [
+          Platform.isMacOS || Platform.isMacOS || Platform.isWindows
+              ? WindowTitleBarBox(child: MoveWindow())
+              : const SizedBox.shrink(),
+          Expanded(
+            child: PageView.builder(
+              controller: controller,
+              itemBuilder: (_, index) => pageList[index],
+              itemCount: pageList.length,
+              physics: const NeverScrollableScrollPhysics(),
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -48,20 +60,46 @@ class _MainViewState extends State<MainView> {
           controller.jumpToPage(index);
           setState(() {});
         },
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             label: 'Home',
             icon: Icon(Icons.home),
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: 'Message',
             icon: Icon(Icons.email),
           ),
           BottomNavigationBarItem(
-            label: 'ShoppingCart',
-            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+            icon: Stack(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 4, right: 4),
+                  child: Icon(Icons.shopping_cart),
+                ),
+                Positioned(
+                  right: 0,
+                  child: Container(
+                    width: 15,
+                    height: 15,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.red,
+                    ),
+                    child: const Text(
+                      '1',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: 'User',
             icon: Icon(
               Icons.person_pin,

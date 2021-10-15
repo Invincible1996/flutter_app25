@@ -16,6 +16,8 @@ dependencies:
   upgrader: ^3.6.0
   fl_chart: ^0.40.0
   underline_indicator: ^0.0.4
+  window_manager: ^0.0.4
+  bitsdojo_window: ^0.1.1+1
 
 
 dev_dependencies:

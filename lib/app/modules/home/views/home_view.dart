@@ -24,18 +24,18 @@ class _HomeViewState extends State<HomeView> with AutomaticKeepAliveClientMixin 
 
   @override
   Widget build(BuildContext context) {
-    print('HomeView build');
+    super.build(context);
     return Scaffold(
       appBar: GFAppBar(
-        leading: GFIconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-          type: GFButtonType.transparent,
-          shape: GFIconButtonShape.standard,
-        ),
+        // leading: GFIconButton(
+        //   icon: const Icon(
+        //     Icons.menu,
+        //     color: Colors.white,
+        //   ),
+        //   onPressed: () {},
+        //   type: GFButtonType.transparent,
+        //   shape: GFIconButtonShape.standard,
+        // ),
         title: const Text("Home Page"),
         actions: <Widget>[
           GFIconButton(
@@ -47,6 +47,21 @@ class _HomeViewState extends State<HomeView> with AutomaticKeepAliveClientMixin 
             type: GFButtonType.transparent,
           ),
         ],
+      ),
+      drawer: GFDrawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            ListTile(
+              title: Text('Item 1'),
+              onTap: null,
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: null,
+            ),
+          ],
+        ),
       ),
       body: Obx(
         () => BaseView(
